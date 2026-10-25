@@ -5,7 +5,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500&display=swap">
 <style>
-:root{--blue:#1b4fd8;--blue-d:#0f2f8f;--ink:#0a0c12;--ink2:#141a2b;--white:#fff;--paper:#f4f5f7;--grey:#8b909b;--line:#dcdfe6;--gold:#c9a24b;--gold-l:#e6c97a;
+:root{--blue:#3d8bf2;--blue-d:#1f6fd6;--ink:#0a0c12;--ink2:#141a2b;--white:#fff;--paper:#f4f5f7;--grey:#8b909b;--line:#dcdfe6;--gold:#c9a24b;--gold-l:#e6c97a;
 --f-b:'Jost','Century Gothic',sans-serif;--f-d:'Cormorant Garamond',Georgia,serif;color-scheme:light}
 @media (prefers-color-scheme:dark){:root{color-scheme:light}}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
@@ -24,11 +24,11 @@ em{font-style:italic}a{color:inherit}button,input,select,textarea{font:inherit;c
 .hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--ink);color:#fff;border-bottom:1px solid rgba(201,162,75,.35)}
 .hdr .wrap{display:flex;align-items:center;gap:24px;padding-block:12px;flex-wrap:wrap}
 .logo{font:italic 600 2rem/1 var(--f-d);text-decoration:none;display:flex;align-items:center;gap:8px}
-.logo i{width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#8fb0ff,var(--blue) 55%,var(--blue-d));margin-top:-10px}
+.logo i{width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#cfe4ff,var(--blue) 55%,var(--blue-d));margin-top:-10px}
 .nav{display:flex;gap:26px;margin-left:auto}.nav a{text-decoration:none;color:#b9bcc6}.nav a:hover{color:var(--gold-l)}
 .hdr .btn{min-height:40px;padding:0 20px}
 /* герой */
-.hero{background:radial-gradient(900px 500px at 85% 40%,#10234f 0,var(--ink) 70%);color:#fff;overflow:hidden}
+.hero{background:radial-gradient(900px 500px at 85% 40%,#1f4a85 0,var(--ink) 70%);color:#fff;overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-block:72px 80px}
 .hero h1{font-size:clamp(2.8rem,7vw,5.4rem)}.hero h1 em{color:var(--gold-l)}
 .lead{margin-top:22px;max-width:46ch;color:#b9bcc6;font-size:1.08rem}
@@ -37,7 +37,7 @@ em{font-style:italic}a{color:inherit}button,input,select,textarea{font:inherit;c
 .facts{display:flex;gap:36px;flex-wrap:wrap;margin-top:44px;padding-top:24px;border-top:1px solid rgba(201,162,75,.4)}
 .facts b{display:block;font:500 2rem/1 var(--f-d);color:var(--gold-l)}.facts span{color:#9a9fab;font-size:.85rem}
 .orb-wrap{position:relative;width:min(400px,86%);aspect-ratio:1;margin-inline:auto}
-.orb{position:absolute;inset:9%;border-radius:50%;background:radial-gradient(circle at 32% 26%,#7ea2ff,var(--blue) 45%,#071a52 100%);box-shadow:inset -26px -34px 70px rgba(0,0,0,.45),0 50px 90px -30px rgba(27,79,216,.55)}
+.orb{position:absolute;inset:9%;border-radius:50%;background:radial-gradient(circle at 32% 26%,#cfe4ff,#6db0ff 40%,#2a72d6 100%);box-shadow:inset -26px -34px 70px rgba(0,0,0,.45),0 50px 90px -30px rgba(93,160,255,.55)}
 .rings{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.rings *{fill:none;stroke:var(--gold);stroke-width:1.1}.rings .sat{fill:var(--gold);stroke:none}
 @media (prefers-reduced-motion:no-preference){.orb-wrap{animation:fl 9s ease-in-out infinite}@keyframes fl{50%{transform:translateY(-10px)}}}
 /* секции */
@@ -48,7 +48,7 @@ section{padding-block:76px}
 .m-tab{display:grid;gap:6px;justify-items:start;text-align:left;padding:18px;border:0;border-right:1px solid var(--line);background:transparent;cursor:pointer;position:relative;min-width:0}
 .m-tab:last-child{border:0}.m-tab[aria-selected=true]{background:var(--paper)}
 .m-tab[aria-selected=true]::after{content:"";position:absolute;inset:auto 0 0;height:3px;background:var(--blue)}
-.av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;font:italic 1.4rem var(--f-d);background:radial-gradient(circle at 32% 26%,#7ea2ff,var(--blue) 55%,#071a52)}
+.av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;font:italic 1.4rem var(--f-d);background:radial-gradient(circle at 32% 26%,#cfe4ff,var(--blue) 55%,#2a72d6)}
 .m-tab[aria-selected=true] .av{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--gold)}
 .nm{font-weight:500;font-size:1.05rem}.rl{color:var(--grey);font-size:.82rem;line-height:1.35}
 .price-panel{margin-top:34px;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr);gap:48px}
