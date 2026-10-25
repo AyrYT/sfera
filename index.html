@@ -171,10 +171,36 @@ radial-gradient(circle at 75% 87%,rgba(90,150,255,.55) 0,rgba(90,150,255,0) 33%)
 background:radial-gradient(circle at 50% 50%,rgba(0,0,0,0) 64%,rgba(130,180,255,.26) 90%,rgba(200,222,255,.42) 100%)}
 .orb-wrap::after{content:"";position:absolute;left:12%;right:12%;bottom:-3%;height:8%;border-radius:50%;
 background:radial-gradient(ellipse,rgba(10,14,30,.62),rgba(10,14,30,0) 70%);filter:blur(6px)}
-</style></head><body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="lg" viewBox="0 0 250 64"><g fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="32" cy="32" r="29"/><rect x="14" y="22" width="36" height="20" rx="10"/><path d="M32 9V55"/><ellipse cx="32" cy="32" rx="31" ry="11" transform="rotate(-20 32 32)" opacity=".8"/></g><circle cx="5" cy="41" r="2.6" fill="#c9a24b"/><text x="72" y="36" fill="currentColor" font-family="Jost,sans-serif" font-weight="300" font-size="29" letter-spacing="5">СФЕРА</text><text x="73" y="51" fill="#8a6a1c" font-family="Jost,sans-serif" font-weight="400" font-size="8.4" letter-spacing="2.3">СТУДИЯ КРАСОТЫ</text></symbol><symbol id="star" viewBox="-12 -12 24 24"><path d="M0-12L3-3 12 0 3 3 0 12-3 3-12 0-3-3Z" fill="#b8902f"/></symbol></defs></svg>
+
+/* больше деталей */
+#napr{background:#fff;border-bottom:1px solid var(--line);padding-top:96px}#uslugi{padding-top:76px}
+.dirs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.dir{background:var(--paper);border:1px solid var(--line);display:grid;grid-template-rows:auto 1fr}
+.pic svg{display:block;width:100%;height:auto}.pic{border-bottom:2px solid var(--blue)}
+.pic1{background:radial-gradient(120% 120% at 70% 30%,#8a909c,#4a4f59)}.pic2{background:radial-gradient(120% 120% at 30% 30%,#d6d9df,#a9aeb8)}.pic3{background:radial-gradient(120% 120% at 60% 40%,#eceef1,#c3c7ce)}
+.db{padding:24px;display:grid;gap:14px;align-content:start}.db h3{font-size:2rem}
+.db ul{margin:0;padding:0;list-style:none;display:grid;gap:6px;color:var(--grey)}.db li{padding-left:18px;position:relative}.db li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;background:var(--gold);transform:rotate(45deg)}
+.dm{display:grid;gap:2px;padding-top:12px;border-top:1px solid var(--line)}.dm b{font:500 1.6rem var(--f-d);color:#000}.dm span{color:var(--grey);font-size:.86rem}
+.db .go{justify-self:start}
+.tick{background:var(--blue);color:#fff;overflow:hidden;padding:15px 0;border-block:1px solid var(--blue-d)}
+.tr{display:flex;width:max-content;gap:26px;align-items:center;padding-right:26px;animation:mq 40s linear infinite}
+.tr span{font:italic 500 1.7rem var(--f-d);white-space:nowrap}.tr svg{width:14px;height:14px;flex:none}
+@keyframes mq{to{transform:translateX(-50%)}}@media (prefers-reduced-motion:reduce){.tr{animation:none}}
+#steps{background:linear-gradient(#e9ebef,var(--paper))}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.step{background:#fff;border:1px solid var(--line);padding:24px;display:grid;gap:8px;align-content:start;border-top:3px solid var(--blue)}
+.step b{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--blue);color:#fff;font:500 1.5rem var(--f-d);box-shadow:0 0 0 3px #fff,0 0 0 4px var(--gold)}
+.step h3{font-size:1.7rem;margin-top:8px}.step p{color:var(--grey)}
+#faq{background:#fff;border-top:1px solid var(--line)}.faq{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);gap:48px;align-items:start}
+details{border-bottom:1px solid var(--line);padding:18px 0}details:first-child{border-top:2px solid var(--ink)}
+summary{cursor:pointer;font:500 1.6rem/1.2 var(--f-d);list-style:none;display:flex;justify-content:space-between;gap:16px}summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--blue);font:300 1.9rem/1 var(--f-b)}details[open] summary::after{content:"\2212"}
+details p{margin-top:10px;color:var(--grey);max-width:60ch}
+@media (max-width:900px){.dirs,.steps,.faq{grid-template-columns:1fr}.faq{gap:30px}#napr{padding-top:72px}}
+</style></head><body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="lg" viewBox="0 0 250 64"><g fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="32" cy="32" r="29"/><rect x="14" y="22" width="36" height="20" rx="10"/><path d="M32 9V55"/><ellipse cx="32" cy="32" rx="31" ry="11" transform="rotate(-20 32 32)" opacity=".8"/></g><circle cx="5" cy="41" r="2.6" fill="#c9a24b"/><text x="72" y="36" fill="currentColor" font-family="Jost,sans-serif" font-weight="300" font-size="29" letter-spacing="5">СФЕРА</text><text x="73" y="51" fill="#8a6a1c" font-family="Jost,sans-serif" font-weight="400" font-size="8.4" letter-spacing="2.3">СТУДИЯ КРАСОТЫ</text></symbol><symbol id="star" viewBox="-12 -12 24 24"><path d="M0-12L3-3 12 0 3 3 0 12-3 3-12 0-3-3Z" fill="#b8902f"/></symbol><radialGradient id="gd1" cx=".35" cy=".3"><stop offset="0" stop-color="#d6e4ff"/><stop offset=".4" stop-color="#2e6bff"/><stop offset="1" stop-color="#04136b"/></radialGradient><radialGradient id="gd2" cx=".35" cy=".3"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#9db6ff"/><stop offset="1" stop-color="#1c2f9a"/></radialGradient><radialGradient id="gd3" cx=".35" cy=".3"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#6d9bff"/><stop offset="1" stop-color="#0a2bd6"/></radialGradient></defs></svg>
 <header class="hdr"><div class="wrap">
 <a class="logo" href="#top" aria-label="Сфера, студия красоты"><svg viewBox="0 0 250 64"><use href="#lg"/></svg></a>
-<nav class="nav"><a href="#uslugi">Услуги и цены</a><a href="#booking">Запись</a><a href="#otzyvy">Отзывы</a><a href="#kontakty">Контакты</a></nav>
+<nav class="nav"><a href="#uslugi">Услуги и цены</a><a href="#booking">Запись</a><a href="#otzyvy">Отзывы</a><a href="#faq">Вопросы</a><a href="#kontakty">Контакты</a></nav>
 <a class="btn gold" href="#booking">Записаться</a></div></header>
 <main id="top">
 <div class="hero"><svg class="st s1" aria-hidden="true"><use href="#star"/></svg><svg class="st s2" aria-hidden="true"><use href="#star"/></svg><svg class="st s3" aria-hidden="true"><use href="#star"/></svg><svg class="st s4" aria-hidden="true"><use href="#star"/></svg><div class="wrap">
@@ -191,10 +217,14 @@ background:radial-gradient(ellipse,rgba(10,14,30,.62),rgba(10,14,30,0) 70%);filt
 <div class="card"><svg class="mini" aria-hidden="true"><use href="#star"/></svg><b>03</b><h3>Запись онлайн</h3><p>Выберите услугу и время, студия подтвердит заявку.</p></div>
 </div></div></section>
 
+<section id="napr"><div class="wrap"><div class="sec-head"><h2>Направления студии</h2><p>Всё для волос и ногтей в одном месте.</p></div><div class="dirs"><article class="dir"><div class="pic pic1"><svg viewBox="0 0 300 170" aria-hidden="true"><circle cx="150" cy="85" r="48" fill="url(#gd1)"/><ellipse cx="150" cy="85" rx="82" ry="25" transform="rotate(-20 150 85)" fill="none" stroke="#c9a24b" stroke-width="1.4"/><use href="#star" x="228" y="38" width="14" height="14"/></svg></div><div class="db"><h3>Волосы</h3><ul><li>Стрижки и укладки</li><li>Окрашивание и тонирование</li><li>Кератин и нанопластика</li><li>Биозавивка</li></ul><p class="dm"><b>от 250 ₽</b><span>Яна, Валентина, Татьяна, Виолетта</span></p><a class="go" href="#uslugi">Смотреть прайс</a></div></article><article class="dir"><div class="pic pic2"><svg viewBox="0 0 300 170" aria-hidden="true"><circle cx="120" cy="85" r="40" fill="url(#gd2)"/><ellipse cx="120" cy="85" rx="74" ry="22" transform="rotate(-20 120 85)" fill="none" stroke="#c9a24b" stroke-width="1.4"/><use href="#star" x="210" y="30" width="14" height="14"/></svg></div><div class="db"><h3>Ногти</h3><ul><li>Маникюр</li><li>Покрытие гель-лаком</li><li>Укрепление гелем</li><li>Наращивание и коррекция</li></ul><p class="dm"><b>от 500 ₽</b><span>Жанна</span></p><a class="go" href="#uslugi">Смотреть прайс</a></div></article><article class="dir"><div class="pic pic3"><svg viewBox="0 0 300 170" aria-hidden="true"><circle cx="165" cy="85" r="54" fill="url(#gd3)"/><ellipse cx="165" cy="85" rx="88" ry="26" transform="rotate(-20 165 85)" fill="none" stroke="#c9a24b" stroke-width="1.4"/><use href="#star" x="240" y="44" width="14" height="14"/></svg></div><div class="db"><h3>Уход</h3><ul><li>Ботокс для волос</li><li>Полировка</li><li>Пилинг кожи головы</li><li>Холодное восстановление</li></ul><p class="dm"><b>от 500 ₽</b><span>Татьяна, Виолетта</span></p><a class="go" href="#uslugi">Смотреть прайс</a></div></article></div></div></section><div class="tick" aria-hidden="true"><div class="tr"><span>Стрижки</span><svg aria-hidden="true"><use href="#star"/></svg><span>Окрашивание</span><svg aria-hidden="true"><use href="#star"/></svg><span>Кератин</span><svg aria-hidden="true"><use href="#star"/></svg><span>Нанопластика</span><svg aria-hidden="true"><use href="#star"/></svg><span>Маникюр</span><svg aria-hidden="true"><use href="#star"/></svg><span>Наращивание</span><svg aria-hidden="true"><use href="#star"/></svg><span>Укладки</span><svg aria-hidden="true"><use href="#star"/></svg><span>Уход за волосами</span><svg aria-hidden="true"><use href="#star"/></svg><span>Стрижки</span><svg aria-hidden="true"><use href="#star"/></svg><span>Окрашивание</span><svg aria-hidden="true"><use href="#star"/></svg><span>Кератин</span><svg aria-hidden="true"><use href="#star"/></svg><span>Нанопластика</span><svg aria-hidden="true"><use href="#star"/></svg><span>Маникюр</span><svg aria-hidden="true"><use href="#star"/></svg><span>Наращивание</span><svg aria-hidden="true"><use href="#star"/></svg><span>Укладки</span><svg aria-hidden="true"><use href="#star"/></svg><span>Уход за волосами</span><svg aria-hidden="true"><use href="#star"/></svg></div></div>
+
 <section id="uslugi"><div class="wrap">
 <div class="sec-head"><h2>Услуги и цены</h2><p>Выберите мастера, чтобы увидеть его прайс. Кнопка «Запись» подставит услугу в форму.</p></div>
 <div class="masters" role="tablist" id="mtabs"></div><div class="price-panel" id="ppanel" role="tabpanel"></div>
 </div></section>
+
+<section id="steps"><div class="wrap"><div class="sec-head"><h2>Как проходит визит</h2><p>Четыре шага от записи до результата.</p></div><div class="steps"><div class="step"><b>1</b><h3>Запись</h3><p>Выберите мастера, услугу и время в форме или напишите нам во ВКонтакте.</p></div><div class="step"><b>2</b><h3>Консультация</h3><p>Мастер уточнит пожелания и назовёт итоговую стоимость.</p></div><div class="step"><b>3</b><h3>Процедура</h3><p>Работаем аккуратно и без спешки, показываем результат по ходу.</p></div><div class="step"><b>4</b><h3>Уход дома</h3><p>Подскажем, как сохранить результат после визита.</p></div></div></div></section>
 
 <section id="booking"><div class="wrap">
 <div class="sec-head"><h2>Запишитесь к мастеру</h2><p>Выберите мастера и услугу, укажите удобные дату и время. Студия подтвердит запись.</p></div>
@@ -231,6 +261,8 @@ background:radial-gradient(ellipse,rgba(10,14,30,.62),rgba(10,14,30,0) 70%);filt
 <div><button class="btn" type="submit">Опубликовать отзыв</button></div></form></div></div>
 </div></section>
 </main>
+<section id="faq"><div class="wrap faq"><div><div class="sec-head"><h2>Частые вопросы</h2><p>Если не нашли ответ, напишите нам.</p></div><a class="btn" href="https://vk.ru/sfera_studio26" target="_blank" rel="noopener">Написать во ВКонтакте</a></div><div><details><summary>Как узнать точную стоимость?</summary><p>В прайсе указана цена «от». Итоговую сумму мастер называет после консультации.</p></details><details><summary>Как записаться?</summary><p>Через форму на сайте или личным сообщением во ВКонтакте. Студия подтвердит запись.</p></details><details><summary>Можно ли выбрать мастера?</summary><p>Да. В прайсе у каждого мастера свой список услуг, выбирайте того, кто подходит.</p></details><details><summary>Что взять с собой?</summary><p>Ничего особенного. Если хотите конкретный образ, покажите фото, мастер подскажет, что возможно.</p></details></div></div></section>
+
 <footer id="kontakty"><div class="wrap">
 <div><svg viewBox="0 0 250 64" style="height:52px;color:#eef3ff;margin-bottom:10px" aria-label="Сфера"><use href="#lg"/></svg><p>Студия красоты. Волосы, ногти, уход.</p></div>
 <div><h4>Связаться</h4><a href="https://vk.ru/sfera_studio26" target="_blank" rel="noopener">ВКонтакте: sfera_studio26</a></div>
