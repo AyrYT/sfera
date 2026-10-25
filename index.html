@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Сфера, студия красоты</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500&display=swap">
+<style>
+:root{--blue:#1b4fd8;--blue-d:#0f2f8f;--ink:#0a0c12;--ink2:#141a2b;--white:#fff;--paper:#f4f5f7;--grey:#8b909b;--line:#dcdfe6;--gold:#c9a24b;--gold-l:#e6c97a;
+--f-b:'Jost','Century Gothic',sans-serif;--f-d:'Cormorant Garamond',Georgia,serif;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{color-scheme:light}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--f-b);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--ink);z-index:30}
+h1,h2,h3,p{margin:0}h1,h2,h3{font-family:var(--f-d);font-weight:500;line-height:1.05;text-wrap:balance}
+em{font-style:italic}a{color:inherit}button,input,select,textarea{font:inherit;color:inherit}
+.wrap{max-width:1120px;margin-inline:auto;padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px))}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 26px;border:1px solid var(--blue);background:var(--blue);color:#fff;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;text-decoration:none;cursor:pointer;border-radius:2px;transition:background .15s}
+.btn:hover{background:var(--blue-d)}.btn:disabled{opacity:.5}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:var(--ink)}.btn.gold:hover{background:var(--gold-l)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}.btn.ghost:hover{background:rgba(127,127,127,.15)}
+/* шапка */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--ink);color:#fff;border-bottom:1px solid rgba(201,162,75,.35)}
+.hdr .wrap{display:flex;align-items:center;gap:24px;padding-block:12px;flex-wrap:wrap}
+.logo{font:italic 600 2rem/1 var(--f-d);text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo i{width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#8fb0ff,var(--blue) 55%,var(--blue-d));margin-top:-10px}
+.nav{display:flex;gap:26px;margin-left:auto}.nav a{text-decoration:none;color:#b9bcc6}.nav a:hover{color:var(--gold-l)}
+.hdr .btn{min-height:40px;padding:0 20px}
+/* герой */
+.hero{background:radial-gradient(900px 500px at 85% 40%,#10234f 0,var(--ink) 70%);color:#fff;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-block:72px 80px}
+.hero h1{font-size:clamp(2.8rem,7vw,5.4rem)}.hero h1 em{color:var(--gold-l)}
+.lead{margin-top:22px;max-width:46ch;color:#b9bcc6;font-size:1.08rem}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.hero .ghost{color:#fff;border-color:rgba(255,255,255,.4)}
+.facts{display:flex;gap:36px;flex-wrap:wrap;margin-top:44px;padding-top:24px;border-top:1px solid rgba(201,162,75,.4)}
+.facts b{display:block;font:500 2rem/1 var(--f-d);color:var(--gold-l)}.facts span{color:#9a9fab;font-size:.85rem}
+.orb-wrap{position:relative;width:min(400px,86%);aspect-ratio:1;margin-inline:auto}
+.orb{position:absolute;inset:9%;border-radius:50%;background:radial-gradient(circle at 32% 26%,#7ea2ff,var(--blue) 45%,#071a52 100%);box-shadow:inset -26px -34px 70px rgba(0,0,0,.45),0 50px 90px -30px rgba(27,79,216,.55)}
+.rings{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.rings *{fill:none;stroke:var(--gold);stroke-width:1.1}.rings .sat{fill:var(--gold);stroke:none}
+@media (prefers-reduced-motion:no-preference){.orb-wrap{animation:fl 9s ease-in-out infinite}@keyframes fl{50%{transform:translateY(-10px)}}}
+/* секции */
+section{padding-block:76px}
+.sec-head{display:grid;gap:10px;margin-bottom:34px;max-width:60ch}.sec-head h2{font-size:clamp(2rem,4.6vw,3rem)}.sec-head p{color:var(--grey)}
+.sec-head h2::after{content:"";display:block;width:56px;height:2px;background:var(--gold);margin-top:16px}
+.masters{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border:1px solid var(--line);background:#fff}
+.m-tab{display:grid;gap:6px;justify-items:start;text-align:left;padding:18px;border:0;border-right:1px solid var(--line);background:transparent;cursor:pointer;position:relative;min-width:0}
+.m-tab:last-child{border:0}.m-tab[aria-selected=true]{background:var(--paper)}
+.m-tab[aria-selected=true]::after{content:"";position:absolute;inset:auto 0 0;height:3px;background:var(--blue)}
+.av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;font:italic 1.4rem var(--f-d);background:radial-gradient(circle at 32% 26%,#7ea2ff,var(--blue) 55%,#071a52)}
+.m-tab[aria-selected=true] .av{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--gold)}
+.nm{font-weight:500;font-size:1.05rem}.rl{color:var(--grey);font-size:.82rem;line-height:1.35}
+.price-panel{margin-top:34px;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr);gap:48px}
+.price-aside h3{font-style:italic;font-size:clamp(2.2rem,5vw,3.4rem)}
+.price-aside .role{color:var(--gold);font-weight:500;margin:10px 0 16px}.price-aside p{color:var(--grey)}
+.note{margin-top:22px;font-size:.85rem;padding-top:16px;border-top:1px solid var(--line)}
+.plist{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.plist li{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:6px 20px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.plist small{display:block;color:var(--grey);font-size:.84rem}.plist .p{font-weight:500;white-space:nowrap;color:var(--blue-d)}
+.go{border:1px solid var(--blue);background:transparent;color:var(--blue);padding:6px 12px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;border-radius:2px;font-weight:500}
+.go:hover{background:var(--blue);color:#fff}
+/* запись */
+#booking{background:#fff;border-block:1px solid var(--line)}
+.book{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:48px;align-items:start}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:18px}.field{display:grid;gap:6px;min-width:0}.field.full{grid-column:1/-1}
+label,.lbl{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);font-weight:500}
+input,select,textarea{width:100%;min-height:46px;padding:10px 12px;border:1px solid var(--line);background:var(--paper);border-radius:2px}
+textarea{min-height:88px;resize:vertical}input:focus,select:focus,textarea:focus{outline:2px solid var(--blue);border-color:var(--blue)}
+.sum{background:var(--ink);color:#fff;padding:28px;display:grid;gap:14px;border-top:3px solid var(--gold)}
+.sum h3{font-size:1.8rem}.sum dt{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}.sum dd{margin:0 0 10px;font-weight:500}
+.sum dl{margin:0}.big{font:500 2.3rem/1 var(--f-d);color:var(--gold-l)}.sum p{color:#9a9fab;font-size:.88rem}
+.msg{padding:12px 16px;border-left:3px solid var(--grey);background:var(--paper);font-size:.92rem}.msg.ok{border-color:#2f7a55}.msg.err{border-color:#b3261e}
+.done{display:grid;gap:14px;padding:30px;border:1px solid var(--line);border-left:3px solid var(--gold);background:var(--paper)}.done h3{font-size:2rem}
+/* отзывы */
+.rev{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr);gap:48px;align-items:start}
+.avg{font:500 5.4rem/.9 var(--f-d);color:var(--blue-d)}.score{display:grid;gap:12px}
+.stars{color:var(--gold);font-size:1.05rem;letter-spacing:2px}.stars .off{color:var(--line)}
+.bars{display:grid;gap:6px;font-size:.82rem;color:var(--grey)}.bars div{display:grid;grid-template-columns:14px 1fr 24px;gap:10px;align-items:center}
+.bars i{height:5px;background:var(--line);position:relative}.bars i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);background:var(--gold)}
+.rlist{border-top:2px solid var(--ink)}.rv{padding:22px 0;border-bottom:1px solid var(--line);display:grid;gap:8px}
+.rv header{display:flex;gap:10px 14px;align-items:baseline;flex-wrap:wrap}.rv .meta{color:var(--grey);font-size:.84rem}
+.rform{margin-top:34px;padding:26px;border:1px solid var(--line);background:#fff;display:grid;gap:18px;border-top:3px solid var(--blue)}.rform h3{font-size:1.8rem}
+.pick{display:flex;gap:4px}.pick button{border:0;background:none;font-size:1.9rem;line-height:1;color:var(--line);cursor:pointer;padding:2px}.pick .on{color:var(--gold)}
+footer{background:var(--ink);color:#fff;padding-block:56px 36px;border-top:2px solid var(--gold)}
+footer .wrap{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px}footer h4{margin:0 0 10px;font:italic 500 1.4rem var(--f-d);color:var(--gold-l)}
+footer p,footer a{color:#9a9fab}footer a:hover{color:#fff}.copy{grid-column:1/-1;padding-top:22px;border-top:1px solid #262c3d;font-size:.82rem}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr;padding-block:44px 52px}.orb-wrap{width:min(280px,80%);order:-1;margin-inline:0}
+.masters{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(150px,1fr);overflow-x:auto}
+.price-panel,.book,.rev{grid-template-columns:1fr;gap:30px}footer .wrap{grid-template-columns:1fr}section{padding-block:56px}}
+@media (max-width:640px){.nav{order:3;width:100%;margin:0;gap:20px;overflow-x:auto}.hdr .btn{display:none}.form{grid-template-columns:1fr}
+.plist li{grid-template-columns:minmax(0,1fr) auto}.go{grid-column:1/-1;justify-self:start}}
+</style></head><body>
+<header class="hdr"><div class="wrap">
+<a class="logo" href="#top">Сфера<i></i></a>
+<nav class="nav"><a href="#uslugi">Услуги и цены</a><a href="#booking">Запись</a><a href="#otzyvy">Отзывы</a><a href="#kontakty">Контакты</a></nav>
+<a class="btn gold" href="#booking">Записаться</a></div></header>
+<main id="top">
+<div class="hero"><div class="wrap">
+<div><h1>Красота, собранная <em>в одном месте</em></h1>
+<p class="lead">Студия красоты: стрижки и окрашивание, кератин и нанопластика, маникюр и наращивание. Выберите мастера, посмотрите цены и запишитесь онлайн.</p>
+<div class="cta"><a class="btn gold" href="#booking">Записаться</a><a class="btn ghost" href="#uslugi">Смотреть цены</a></div>
+<div class="facts" id="facts"></div></div>
+<div class="orb-wrap" aria-hidden="true"><div class="orb"></div>
+<svg class="rings" viewBox="0 0 400 400"><ellipse cx="200" cy="200" rx="196" ry="62" transform="rotate(-22 200 200)"/><ellipse cx="200" cy="200" rx="150" ry="150" stroke-dasharray="2 7"/><path d="M200 28V372"/><circle class="sat" cx="40" cy="262" r="8"/><circle class="sat" cx="352" cy="136" r="4"/></svg></div>
+</div></div>
+
+<section id="uslugi"><div class="wrap">
+<div class="sec-head"><h2>Услуги и цены</h2><p>Выберите мастера, чтобы увидеть его прайс. Кнопка «Запись» подставит услугу в форму.</p></div>
+<div class="masters" role="tablist" id="mtabs"></div><div class="price-panel" id="ppanel" role="tabpanel"></div>
+</div></section>
+
+<section id="booking"><div class="wrap">
+<div class="sec-head"><h2>Запишитесь к мастеру</h2><p>Выберите мастера и услугу, укажите удобные дату и время. Студия подтвердит запись.</p></div>
+<div class="book"><div id="bookbox">
+<form class="form" id="bform" novalidate>
+<div class="field"><label for="b-master">Мастер</label><select id="b-master"></select></div>
+<div class="field"><label for="b-service">Услуга</label><select id="b-service"></select></div>
+<div class="field"><label for="b-date">Дата</label><input id="b-date" type="date"></div>
+<div class="field"><label for="b-time">Удобное время</label><input id="b-time" type="time"></div>
+<div class="field"><label for="b-name">Имя</label><input id="b-name" maxlength="60" autocomplete="given-name"></div>
+<div class="field"><label for="b-phone">Телефон</label><input id="b-phone" type="tel" placeholder="+7 900 000-00-00" maxlength="24"></div>
+<div class="field full"><label for="b-comment">Комментарий</label><textarea id="b-comment" maxlength="400" placeholder="Длина волос, пожелания, вопросы"></textarea></div>
+<div class="field full"><div class="msg" id="b-msg" hidden></div></div>
+<div class="field full"><button class="btn" type="submit">Отправить заявку</button></div>
+</form></div>
+<aside class="sum" aria-live="polite"><h3 id="s-service"></h3>
+<dl><dt>Мастер</dt><dd id="s-master"></dd><dt>Стоимость</dt><dd class="big" id="s-price"></dd></dl>
+<p>Цена «от» стартовая, итоговую стоимость уточняет мастер.</p>
+<a class="btn gold" href="https://vk.ru/sfera_studio26" target="_blank" rel="noopener">Написать во ВКонтакте</a></aside></div>
+</div></section>
+
+<section id="otzyvy"><div class="wrap">
+<div class="sec-head"><h2>Что говорят клиенты</h2></div>
+<div class="rev"><div class="score" id="score"></div>
+<div><div class="rlist" id="rlist"></div>
+<form class="rform" id="rform" novalidate><h3>Оставить отзыв</h3>
+<div class="field"><span class="lbl">Оценка</span><div class="pick" id="pick"></div></div>
+<div class="form"><div class="field"><label for="r-name">Ваше имя</label><input id="r-name" maxlength="40"></div>
+<div class="field"><label for="r-master">К кому ходили</label><select id="r-master"></select></div>
+<div class="field full"><label for="r-text">Отзыв</label><textarea id="r-text" maxlength="800" placeholder="Что понравилось, что можно улучшить"></textarea></div></div>
+<div class="msg" id="r-msg" hidden></div>
+<div><button class="btn" type="submit">Опубликовать отзыв</button></div></form></div></div>
+</div></section>
+</main>
+<footer id="kontakty"><div class="wrap">
+<div><h4>Сфера</h4><p>Студия красоты. Волосы, ногти, уход.</p></div>
+<div><h4>Связаться</h4><a href="https://vk.ru/sfera_studio26" target="_blank" rel="noopener">ВКонтакте: sfera_studio26</a></div>
+<div><h4>О сайте</h4><p>Демо-версия в синей гамме. Заявки и отзывы здесь не сохраняются.</p></div>
+<p class="copy">© Сфера, студия красоты</p></div></footer>
+
+<script>
+(function(){
+var M=[
+{id:'yana',name:'Яна',role:'Мастер',spec:'Стрижки, окрашивание, укладки',about:'Женские стрижки и все виды окрашивания: от тонирования до тотал блонда.',s:[['Женская стрижка',900],['Стрижка челки',250],['Стрижка «одним срезом»',350],['Окрашивание в 1 тон',2000,1],['Тонирование волос',1600,1],['Сложное окрашивание (2 и более тонов)',2800,1],['Тотал блонд',3000,1],['Биозавивка',2000,1],['Кератиновое выпрямление волос',2800,1],['Холодный уход',2000],['Укладка волос',800,1]]},
+{id:'valentina',name:'Валентина',role:'Мастер',spec:'Стрижки для женщин и мужчин, окрашивание, объём',about:'Женские и мужские стрижки, окрашивание, кератин и прикорневой объём.',s:[['Стрижка женская',800],['Стрижка челки',250],['Стрижка «одним срезом»',350],['Окрашивание в 1 тон',1800,1],['Тонирование волос',1600,1],['Сложное окрашивание (2 и более тонов)',2800,1],['Тотал блонд',3000,1],['Биозавивка',2000,1],['Кератиновое выпрямление волос',2800,1],['Холодный уход',2000,1],['Укладка волос',800,1],['Мужская стрижка',600],['Стрижка под насадку',500],['Прикорневой объём на кератине WoWBoost',3000]]},
+{id:'tatyana',name:'Татьяна',role:'Технолог',spec:'Восстановление и выпрямление волос',about:'Уходовые и восстанавливающие процедуры для волос и кожи головы.',s:[['Кератиновое выпрямление',3000,1],['Ботокс волос',2000,1],['Нанопластика',4000,1],['Пилинг кожи головы',500,1],['Полировка волос',1000,1],['Холодное восстановление',2000,1],['Дисциплинирование волос',1000,1]]},
+{id:'violetta',name:'Виолетта',role:'Мастер',spec:'Кератин, ботокс, нанопластика',about:'Процедуры для гладкости и блеска: кератин, ботокс, нанопластика, полировка.',s:[['Кератиновое выпрямление',3000,1],['Ботокс волос',2000,1],['Нанопластика',4000,1],['Полировка волос',1000,1]]},
+{id:'zhanna',name:'Жанна',role:'Мастер',spec:'Маникюр и наращивание ногтей',about:'Маникюр, гель-лак, укрепление и наращивание.',s:[['Маникюр','без покрытия',500],['Маникюр с покрытием','маникюр + покрытие гель-лаком',1000],['Маникюр с укреплением','маникюр + гель-лак + укрепление гелем/полигелем',1100],['Наращивание','маникюр + наращивание длины + гель-лак',1400],['Коррекция наращивания','маникюр + коррекция гелем + гель-лак',1200]]}];
+M.forEach(function(m){m.items=m.s.map(function(x){return typeof x[1]==='string'?{n:x[0],d:x[1],p:x[2],from:0}:{n:x[0],d:'',p:x[1],from:!!x[2]}})});
+var $=function(s){return document.querySelector(s)};
+function el(t,a,k){var e=document.createElement(t);for(var i in a||{})i==='text'?e.textContent=a[i]:e.setAttribute(i,a[i]);(k||[]).forEach(function(c){if(c)e.appendChild(typeof c==='string'?document.createTextNode(c):c)});return e}
+function money(i){return(i.from?'от ':'')+i.p.toLocaleString('ru-RU')+' ₽'}
+function mBy(id){return M.filter(function(m){return m.id===id})[0]}
+function minOf(m){return Math.min.apply(null,m.items.map(function(i){return i.p}))}
+function msg(n,t,k){n.hidden=!t;n.textContent=t||'';n.className='msg'+(k?' '+k:'')}
+function plural(n,f){var a=n%10,b=n%100;return a===1&&b!==11?f[0]:a>1&&a<5&&(b<12||b>14)?f[1]:f[2]}
+/* факты */
+var tot=M.reduce(function(a,m){return a+m.items.length},0);
+[[M.length,'мастеров'],[tot,'позиций в прайсе'],['от '+Math.min.apply(null,M.map(minOf))+' ₽','стрижка чёлки']].forEach(function(f){$('#facts').appendChild(el('div',0,[el('b',{text:String(f[0])}),el('span',{text:f[1]})]))});
+/* мастера */
+var cur=M[0].id;
+function tabs(){var b=$('#mtabs');b.textContent='';M.forEach(function(m){var t=el('button',{class:'m-tab',role:'tab',type:'button','aria-selected':String(m.id===cur)},[el('span',{class:'av',text:m.name[0]}),el('span',{class:'nm',text:m.name}),el('span',{class:'rl',text:m.spec})]);t.onclick=function(){cur=m.id;tabs();price()};b.appendChild(t)})}
+function price(){var m=mBy(cur),p=$('#ppanel');p.textContent='';
+p.appendChild(el('div',{class:'price-aside'},[el('h3',{text:m.name}),el('p',{class:'role',text:m.role}),el('p',{text:m.about}),el('p',{class:'note',text:'Позиций: '+m.items.length+'. Самая доступная: '+money({p:minOf(m)})+'.'})]));
+var ul=el('ul',{class:'plist'});
+m.items.forEach(function(it,i){var g=el('button',{class:'go',type:'button',text:'Запись','aria-label':'Записаться: '+it.n});g.onclick=function(){bm.value=m.id;fill(i);$('#booking').scrollIntoView({behavior:'smooth'})};
+ul.appendChild(el('li',0,[el('span',0,[it.n,it.d?el('small',{text:it.d}):null]),el('span',{class:'p',text:money(it)}),g]))});
+p.appendChild(ul)}
+/* запись */
+var bm=$('#b-master'),bs=$('#b-service');
+M.forEach(function(m){bm.appendChild(el('option',{value:m.id,text:m.name+' · '+m.spec}))});
+function fill(sel){var m=mBy(bm.value);bs.textContent='';m.items.forEach(function(it,i){bs.appendChild(el('option',{value:i,text:it.n+' — '+money(it)}))});bs.value=sel||0;sum()}
+function sum(){var m=mBy(bm.value),it=m.items[+bs.value||0];$('#s-service').textContent=it.n;$('#s-master').textContent=m.name+', '+m.role.toLowerCase();$('#s-price').textContent=money(it)}
+bm.onchange=function(){fill(0)};bs.onchange=sum;fill(0);
+$('#b-date').min=new Date().toISOString().slice(0,10);
+$('#bform').onsubmit=function(e){e.preventDefault();var o=$('#b-msg'),d=$('#b-date').value,t=$('#b-time').value,n=$('#b-name').value.trim(),ph=$('#b-phone').value;
+if(!d)return msg(o,'Выберите дату.','err');if(!t)return msg(o,'Укажите удобное время.','err');if(!n)return msg(o,'Укажите имя.','err');
+if(ph.replace(/\D/g,'').length<10)return msg(o,'Проверьте телефон: нужно минимум 10 цифр.','err');
+var m=mBy(bm.value),it=m.items[+bs.value],b=$('#bookbox');b.textContent='';var nb=el('button',{class:'btn ghost',type:'button',text:'Новая заявка'});nb.onclick=function(){location.reload()};
+b.appendChild(el('div',{class:'done'},[el('h3',{text:'Заявка принята'}),el('p',{text:n+', '+m.name+', '+it.n+': '+d.split('-').reverse().join('.')+' в '+t+'.'}),el('p',{style:'color:var(--grey)',text:'Это демо: заявка никуда не отправляется.'}),nb]))};
+/* отзывы (демо, в памяти) */
+var R=[{n:'Алина',r:5,m:'yana',t:'Сделала тонирование и стрижку, цвет лёг ровно, волосы живые. Приду ещё.',d:'12 сентября 2026'},
+{n:'Мария',r:5,m:'zhanna',t:'Маникюр с гель-лаком держится больше трёх недель. Аккуратно и без спешки.',d:'28 сентября 2026'},
+{n:'Ирина',r:4,m:'tatyana',t:'Нанопластика: волосы гладкие и послушные. Немного пришлось подождать, но результат того стоит.',d:'3 октября 2026'}];
+var my=0,pk=$('#pick'),rm=$('#r-master');
+rm.appendChild(el('option',{value:'',text:'Не указывать'}));M.forEach(function(m){rm.appendChild(el('option',{value:m.id,text:m.name}))});
+function stars(n){var s=el('span',{class:'stars','aria-label':'Оценка '+n+' из 5'});for(var i=1;i<=5;i++)s.appendChild(el('span',{class:i<=n?'':'off',text:'★'}));return s}
+function pickR(){pk.textContent='';for(var i=1;i<=5;i++)(function(i){var b=el('button',{type:'button','aria-label':i+' из 5',class:i<=my?'on':'',text:'★'});b.onclick=function(){my=i;pickR()};pk.appendChild(b)})(i)}
+function reviews(){var n=R.length,avg=R.reduce(function(a,r){return a+r.r},0)/n,sc=$('#score');sc.textContent='';
+sc.appendChild(el('div',{class:'avg',text:avg.toFixed(1).replace('.',',')}));sc.appendChild(stars(Math.round(avg)));sc.appendChild(el('p',{style:'color:var(--grey)',text:n+' '+plural(n,['отзыв','отзыва','отзывов'])}));
+var bars=el('div',{class:'bars'});for(var s=5;s>=1;s--){var c=R.filter(function(r){return r.r===s}).length,row=el('div',0,[el('span',{text:s}),el('i'),el('span',{text:c})]);row.children[1].style.setProperty('--w',c/n*100+'%');bars.appendChild(row)}sc.appendChild(bars);
+var l=$('#rlist');l.textContent='';R.forEach(function(r){var m=r.m&&mBy(r.m);l.appendChild(el('article',{class:'rv'},[el('header',0,[el('b',{text:r.n}),stars(r.r),el('span',{class:'meta',text:(m?'Мастер: '+m.name+', ':'')+r.d})]),el('p',{text:r.t})]))})}
+$('#rform').onsubmit=function(e){e.preventDefault();var o=$('#r-msg'),n=$('#r-name').value.trim(),t=$('#r-text').value.trim();
+if(!my)return msg(o,'Поставьте оценку от 1 до 5.','err');if(!n)return msg(o,'Укажите имя.','err');if(t.length<5)return msg(o,'Напишите пару слов о визите.','err');
+R.unshift({n:n,r:my,m:rm.value,t:t,d:new Date().toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'})});
+my=0;pickR();$('#r-text').value='';reviews();msg(o,'Спасибо! Отзыв добавлен (демо, до обновления страницы).','ok')};
+tabs();price();pickR();reviews();
+})();
+</script></body></html>
