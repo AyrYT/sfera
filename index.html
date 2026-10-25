@@ -5,7 +5,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500&display=swap">
 <style>
-:root{--blue:#3d8bf2;--blue-d:#1f6fd6;--ink:#0a0c12;--ink2:#141a2b;--white:#fff;--paper:#f4f5f7;--grey:#8b909b;--line:#dcdfe6;--gold:#c9a24b;--gold-l:#e6c97a;
+:root{--blue:#8a2250;--blue-d:#5c1236;--ink:#0b0709;--ink2:#1b0f16;--white:#fff;--paper:#f7f3f5;--grey:#8b909b;--line:#e4dce0;--gold:#c9a24b;--gold-l:#e6c97a;
 --f-b:'Jost','Century Gothic',sans-serif;--f-d:'Cormorant Garamond',Georgia,serif;color-scheme:light}
 @media (prefers-color-scheme:dark){:root{color-scheme:light}}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
@@ -24,11 +24,11 @@ em{font-style:italic}a{color:inherit}button,input,select,textarea{font:inherit;c
 .hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--ink);color:#fff;border-bottom:1px solid rgba(201,162,75,.35)}
 .hdr .wrap{display:flex;align-items:center;gap:24px;padding-block:12px;flex-wrap:wrap}
 .logo{font:italic 600 2rem/1 var(--f-d);text-decoration:none;display:flex;align-items:center;gap:8px}
-.logo i{width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#cfe4ff,var(--blue) 55%,var(--blue-d));margin-top:-10px}
+.logo svg{height:46px;width:auto;display:block;color:#f6eaf0}.logo i{width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#cfe4ff,var(--blue) 55%,var(--blue-d));margin-top:-10px}
 .nav{display:flex;gap:26px;margin-left:auto}.nav a{text-decoration:none;color:#b9bcc6}.nav a:hover{color:var(--gold-l)}
 .hdr .btn{min-height:40px;padding:0 20px}
 /* герой */
-.hero{background:radial-gradient(900px 500px at 85% 40%,#1f4a85 0,var(--ink) 70%);color:#fff;overflow:hidden}
+.hero{background:radial-gradient(900px 500px at 85% 40%,#4a1230 0,var(--ink) 70%);color:#fff;overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-block:72px 80px}
 .hero h1{font-size:clamp(2.8rem,7vw,5.4rem)}.hero h1 em{color:var(--gold-l)}
 .lead{margin-top:22px;max-width:46ch;color:#b9bcc6;font-size:1.08rem}
@@ -37,7 +37,7 @@ em{font-style:italic}a{color:inherit}button,input,select,textarea{font:inherit;c
 .facts{display:flex;gap:36px;flex-wrap:wrap;margin-top:44px;padding-top:24px;border-top:1px solid rgba(201,162,75,.4)}
 .facts b{display:block;font:500 2rem/1 var(--f-d);color:var(--gold-l)}.facts span{color:#9a9fab;font-size:.85rem}
 .orb-wrap{position:relative;width:min(400px,86%);aspect-ratio:1;margin-inline:auto}
-.orb{position:absolute;inset:9%;border-radius:50%;background:radial-gradient(circle at 32% 26%,#cfe4ff,#6db0ff 40%,#2a72d6 100%);box-shadow:inset -26px -34px 70px rgba(0,0,0,.45),0 50px 90px -30px rgba(93,160,255,.55)}
+.orb{position:absolute;inset:9%;border-radius:50%;background:radial-gradient(circle at 32% 26%,#f0b8d0,#b0396d 40%,#3a0a22 100%);box-shadow:inset -26px -34px 70px rgba(0,0,0,.45),0 50px 90px -30px rgba(176,57,109,.5)}
 .rings{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.rings *{fill:none;stroke:var(--gold);stroke-width:1.1}.rings .sat{fill:var(--gold);stroke:none}
 @media (prefers-reduced-motion:no-preference){.orb-wrap{animation:fl 9s ease-in-out infinite}@keyframes fl{50%{transform:translateY(-10px)}}}
 /* секции */
@@ -48,7 +48,7 @@ section{padding-block:76px}
 .m-tab{display:grid;gap:6px;justify-items:start;text-align:left;padding:18px;border:0;border-right:1px solid var(--line);background:transparent;cursor:pointer;position:relative;min-width:0}
 .m-tab:last-child{border:0}.m-tab[aria-selected=true]{background:var(--paper)}
 .m-tab[aria-selected=true]::after{content:"";position:absolute;inset:auto 0 0;height:3px;background:var(--blue)}
-.av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;font:italic 1.4rem var(--f-d);background:radial-gradient(circle at 32% 26%,#cfe4ff,var(--blue) 55%,#2a72d6)}
+.av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;font:italic 1.4rem var(--f-d);background:radial-gradient(circle at 32% 26%,#f0b8d0,var(--blue) 55%,#3a0a22)}
 .m-tab[aria-selected=true] .av{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--gold)}
 .nm{font-weight:500;font-size:1.05rem}.rl{color:var(--grey);font-size:.82rem;line-height:1.35}
 .price-panel{margin-top:34px;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr);gap:48px}
@@ -90,9 +90,9 @@ footer p,footer a{color:#9a9fab}footer a:hover{color:#fff}.copy{grid-column:1/-1
 .price-panel,.book,.rev{grid-template-columns:1fr;gap:30px}footer .wrap{grid-template-columns:1fr}section{padding-block:56px}}
 @media (max-width:640px){.nav{order:3;width:100%;margin:0;gap:20px;overflow-x:auto}.hdr .btn{display:none}.form{grid-template-columns:1fr}
 .plist li{grid-template-columns:minmax(0,1fr) auto}.go{grid-column:1/-1;justify-self:start}}
-</style></head><body>
+</style></head><body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="lg" viewBox="0 0 250 64"><g fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="32" cy="32" r="29"/><rect x="14" y="22" width="36" height="20" rx="10"/><path d="M32 9V55"/><ellipse cx="32" cy="32" rx="31" ry="11" transform="rotate(-20 32 32)" opacity=".8"/></g><circle cx="5" cy="41" r="2.6" fill="#c9a24b"/><text x="72" y="36" fill="currentColor" font-family="Jost,sans-serif" font-weight="300" font-size="29" letter-spacing="5">СФЕРА</text><text x="73" y="51" fill="#c9a24b" font-family="Jost,sans-serif" font-weight="400" font-size="8.4" letter-spacing="2.3">СТУДИЯ КРАСОТЫ</text></symbol></defs></svg>
 <header class="hdr"><div class="wrap">
-<a class="logo" href="#top">Сфера<i></i></a>
+<a class="logo" href="#top" aria-label="Сфера, студия красоты"><svg viewBox="0 0 250 64"><use href="#lg"/></svg></a>
 <nav class="nav"><a href="#uslugi">Услуги и цены</a><a href="#booking">Запись</a><a href="#otzyvy">Отзывы</a><a href="#kontakty">Контакты</a></nav>
 <a class="btn gold" href="#booking">Записаться</a></div></header>
 <main id="top">
@@ -102,7 +102,7 @@ footer p,footer a{color:#9a9fab}footer a:hover{color:#fff}.copy{grid-column:1/-1
 <div class="cta"><a class="btn gold" href="#booking">Записаться</a><a class="btn ghost" href="#uslugi">Смотреть цены</a></div>
 <div class="facts" id="facts"></div></div>
 <div class="orb-wrap" aria-hidden="true"><div class="orb"></div>
-<svg class="rings" viewBox="0 0 400 400"><ellipse cx="200" cy="200" rx="196" ry="62" transform="rotate(-22 200 200)"/><ellipse cx="200" cy="200" rx="150" ry="150" stroke-dasharray="2 7"/><path d="M200 28V372"/><circle class="sat" cx="40" cy="262" r="8"/><circle class="sat" cx="352" cy="136" r="4"/></svg></div>
+<svg class="rings" viewBox="0 0 400 400"><ellipse cx="200" cy="200" rx="196" ry="62" transform="rotate(-22 200 200)"/><ellipse cx="200" cy="200" rx="150" ry="150" stroke-dasharray="2 7"/><path d="M200 28V372"/><g transform="rotate(-22 200 200)"><path class="sat" d="M0-12L3-3 12 0 3 3 0 12-3 3-12 0-3-3Z"><animateMotion dur="12s" repeatCount="indefinite" path="M4,200a196,62 0 1,0 392,0a196,62 0 1,0 -392,0"/></path></g><circle class="sat" cx="352" cy="136" r="4"/></svg></div>
 </div></div>
 
 <section id="uslugi"><div class="wrap">
@@ -144,9 +144,9 @@ footer p,footer a{color:#9a9fab}footer a:hover{color:#fff}.copy{grid-column:1/-1
 </div></section>
 </main>
 <footer id="kontakty"><div class="wrap">
-<div><h4>Сфера</h4><p>Студия красоты. Волосы, ногти, уход.</p></div>
+<div><svg viewBox="0 0 250 64" style="height:52px;color:#f6eaf0;margin-bottom:10px" aria-label="Сфера"><use href="#lg"/></svg><p>Студия красоты. Волосы, ногти, уход.</p></div>
 <div><h4>Связаться</h4><a href="https://vk.ru/sfera_studio26" target="_blank" rel="noopener">ВКонтакте: sfera_studio26</a></div>
-<div><h4>О сайте</h4><p>Демо-версия в синей гамме. Заявки и отзывы здесь не сохраняются.</p></div>
+<div><h4>О сайте</h4><p>Демо-версия. Заявки и отзывы здесь не сохраняются.</p></div>
 <p class="copy">© Сфера, студия красоты</p></div></footer>
 
 <script>
@@ -206,5 +206,6 @@ if(!my)return msg(o,'Поставьте оценку от 1 до 5.','err');if(!
 R.unshift({n:n,r:my,m:rm.value,t:t,d:new Date().toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'})});
 my=0;pickR();$('#r-text').value='';reviews();msg(o,'Спасибо! Отзыв добавлен (демо, до обновления страницы).','ok')};
 tabs();price();pickR();reviews();
+if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.querySelectorAll('animateMotion').forEach(function(n){n.parentNode.setAttribute('transform','translate(200 262)');n.remove()});
 })();
 </script></body></html>
