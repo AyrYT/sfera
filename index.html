@@ -254,6 +254,30 @@ body,#napr,#booking,#faq{background-image:var(--pat);background-size:150px 140px
 @keyframes flt{to{transform:translateY(16px) rotate(3deg)}}
 }
 @media (max-width:900px){.snip{display:none}#uslugi::after,#steps::before,#booking::before{width:180px;height:180px;opacity:.6}}
+
+/* полоса прокрутки, появление блоков, плавающая кнопка */
+.prog{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);height:3px;z-index:40;pointer-events:none}
+.prog i{display:block;height:100%;transform-origin:0 0;transform:scaleX(0);background:linear-gradient(90deg,var(--blue),var(--gold))}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.fab{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:25;display:inline-flex;align-items:center;gap:10px;min-height:50px;padding:0 22px;border-radius:30px;background:var(--blue);color:#fff;text-decoration:none;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;box-shadow:0 12px 28px -10px rgba(10,77,255,.8);opacity:0;transform:translateY(20px);pointer-events:none;transition:opacity .35s,transform .35s}
+.fab.show{opacity:1;transform:none;pointer-events:auto}.fab:hover{background:var(--blue-d)}
+.fab svg{width:14px;height:14px}
+@media (prefers-reduced-motion:no-preference){.fab.show::after{content:"";position:absolute;inset:0;border-radius:30px;animation:pl 2.6s ease-out infinite;pointer-events:none}
+@keyframes pl{0%{box-shadow:0 0 0 0 rgba(10,77,255,.45)}70%,100%{box-shadow:0 0 0 16px rgba(10,77,255,0)}}}
+
+/* сфера слегка качается, звезда ходит вокруг неё */
+.orb-wrap{animation:none}
+@media (prefers-reduced-motion:no-preference){
+.orb{animation:bob 5.5s ease-in-out infinite}
+.orb-wrap::after{animation:shd 5.5s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(5px)}50%{transform:translateY(-9px)}}
+@keyframes shd{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.86);opacity:.75}}}
+
+/* сфера, орбита и звезда качаются вместе вверх и вниз */
+.orb,.orb-wrap::after{animation:none!important}
+@media (prefers-reduced-motion:no-preference){.orb-wrap{animation:bobwrap 5.5s ease-in-out infinite}
+@keyframes bobwrap{0%,100%{transform:translateY(6px)}50%{transform:translateY(-10px)}}}
 </style></head><body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="lg" viewBox="0 0 250 64"><g fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="32" cy="32" r="29"/><rect x="14" y="22" width="36" height="20" rx="10"/><path d="M32 9V55"/><ellipse cx="32" cy="32" rx="31" ry="11" transform="rotate(-20 32 32)" opacity=".8"/></g><circle cx="5" cy="41" r="2.6" fill="#c9a24b"/><text x="72" y="36" fill="currentColor" font-family="Jost,sans-serif" font-weight="300" font-size="29" letter-spacing="5">СФЕРА</text><text x="73" y="51" fill="#8a6a1c" font-family="Jost,sans-serif" font-weight="400" font-size="8.4" letter-spacing="2.3">СТУДИЯ КРАСОТЫ</text></symbol><symbol id="star" viewBox="-12 -12 24 24"><path d="M0-12L3-3 12 0 3 3 0 12-3 3-12 0-3-3Z" fill="#b8902f"/></symbol><radialGradient id="gd1" cx=".35" cy=".3"><stop offset="0" stop-color="#d6e4ff"/><stop offset=".4" stop-color="#2e6bff"/><stop offset="1" stop-color="#04136b"/></radialGradient><radialGradient id="gd2" cx=".35" cy=".3"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#9db6ff"/><stop offset="1" stop-color="#1c2f9a"/></radialGradient><radialGradient id="gd3" cx=".35" cy=".3"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#6d9bff"/><stop offset="1" stop-color="#0a2bd6"/></radialGradient></defs></svg>
 <header class="hdr"><div class="wrap">
 <a class="logo" href="#top" aria-label="Сфера, студия красоты"><svg viewBox="0 0 250 64"><use href="#lg"/></svg></a>
@@ -265,7 +289,7 @@ body,#napr,#booking,#faq{background-image:var(--pat);background-size:150px 140px
 <p class="lead">Студия красоты: стрижки и окрашивание, кератин и нанопластика, маникюр и наращивание. Выберите мастера, посмотрите цены и запишитесь онлайн.</p>
 <div class="cta"><a class="btn gold" href="#booking">Записаться</a><a class="btn ghost" href="#uslugi">Смотреть цены</a></div>
 <div class="facts" id="facts"></div></div>
-<div class="orb-wrap" aria-hidden="true"><div class="orb"></div><svg class="rings" viewBox="0 0 400 400"><defs><radialGradient id="sg"><stop offset="0" stop-color="#fffbe0"/><stop offset=".3" stop-color="#ffd54a"/><stop offset=".75" stop-color="#ffab00"/><stop offset="1" stop-color="#ff8a00"/></radialGradient></defs><circle cx="200" cy="200" r="150" stroke-dasharray="2 7"/><path d="M200 28V372"/><g transform="rotate(-22 200 200)"><ellipse cx="200" cy="200" rx="196" ry="62"/><g class="trav" style="filter:drop-shadow(0 0 2px #fff6c4) drop-shadow(0 0 7px #ffb300) drop-shadow(0 0 16px rgba(255,150,0,.85))"><animateMotion path="M4,200a196,62 0 1,0 392,0a196,62 0 1,0 -392,0" dur="10s" repeatCount="indefinite" calcMode="linear"/><g><animateTransform attributeName="transform" type="scale" values="1;.78;1.08;.9;1" dur="2.6s" repeatCount="indefinite"/><path d="M0-9Q1.2-1.2 9 0Q1.2 1.2 0 9Q-1.2 1.2-9 0Q-1.2-1.2 0-9Z" transform="rotate(45)" style="fill:#ffcf40;stroke:none;opacity:.55"/><path d="M0-19Q2.2-2.2 19 0Q2.2 2.2 0 19Q-2.2 2.2-19 0Q-2.2-2.2 0-19Z" style="fill:url(#sg);stroke:none"/><circle r="2.6" style="fill:#fffbe6;stroke:none"/></g></g></g><circle class="sat" cx="352" cy="136" r="4"/></svg></div>
+<div class="orb-wrap" aria-hidden="true"><div class="orb"></div><svg class="rings" viewBox="0 0 400 400"><defs><radialGradient id="sg"><stop offset="0" stop-color="#fffbe0"/><stop offset=".3" stop-color="#ffd54a"/><stop offset=".75" stop-color="#ffab00"/><stop offset="1" stop-color="#ff8a00"/></radialGradient></defs><circle cx="200" cy="200" r="150" stroke-dasharray="2 7"/><path d="M200 28V372"/><g transform="rotate(-22 200 200)"><ellipse cx="200" cy="200" rx="196" ry="62"/><g class="trav" style="filter:drop-shadow(0 0 2px #fff6c4) drop-shadow(0 0 7px #ffb300) drop-shadow(0 0 16px rgba(255,150,0,.85))"><animateMotion path="M4,200a196,62 0 1,0 392,0a196,62 0 1,0 -392,0" dur="10s" repeatCount="indefinite" calcMode="linear"/><g><path d="M0-9Q1.2-1.2 9 0Q1.2 1.2 0 9Q-1.2 1.2-9 0Q-1.2-1.2 0-9Z" transform="rotate(45)" style="fill:#ffcf40;stroke:none;opacity:.55"/><path d="M0-19Q2.2-2.2 19 0Q2.2 2.2 0 19Q-2.2 2.2-19 0Q-2.2-2.2 0-19Z" style="fill:url(#sg);stroke:none"/><circle r="2.6" style="fill:#fffbe6;stroke:none"/></g></g></g><circle class="sat" cx="352" cy="136" r="4"/></svg></div>
 </div></div>
 
 <section class="feat"><div class="wrap"><div class="cards">
@@ -385,4 +409,27 @@ my=0;pickR();$('#r-text').value='';reviews();msg(o,'Спасибо! Отзыв �
 tabs();price();pickR();reviews();
 if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.querySelectorAll('.rings .trav').forEach(function(n){n.remove()});
 })();
-</script></body></html>
+</script><div class="prog" aria-hidden="true"><i></i></div>
+<a class="fab" href="#booking" id="fab">Записаться<svg aria-hidden="true"><use href="#star"/></svg></a>
+<script>
+(function(){
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* прогресс прокрутки и плавающая кнопка */
+var bar=document.querySelector('.prog i'),fab=document.getElementById('fab'),bk=document.getElementById('booking'),tick=false;
+function upd(){tick=false;var h=document.documentElement,max=h.scrollHeight-innerHeight,y=scrollY;
+bar.style.transform='scaleX('+(max>0?Math.min(1,y/max):0)+')';
+var r=bk.getBoundingClientRect(),inBk=r.top<innerHeight*.7&&r.bottom>innerHeight*.2;
+fab.classList.toggle('show',y>innerHeight*.7&&!inBk)}
+addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});addEventListener('resize',upd);upd();
+/* плавное появление блоков */
+if(!reduce&&window.IntersectionObserver){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.sec-head,.card,.dir,.step,details,.rform,.sum,.band .wrap').forEach(function(n){
+var sib=[].indexOf.call(n.parentNode.children,n);n.style.transitionDelay=Math.min(sib,4)*80+'ms';n.classList.add('reveal');io.observe(n)})}
+/* счётчики в первом экране */
+if(!reduce)setTimeout(function(){document.querySelectorAll('#facts b').forEach(function(b){
+var m=b.textContent.match(/\d+/);if(!m)return;var end=+m[0],t0=performance.now(),txt=b.textContent;
+(function f(now){var p=Math.min(1,(now-t0)/1300),e=1-Math.pow(1-p,3);b.textContent=txt.replace(m[0],Math.round(end*e));if(p<1)requestAnimationFrame(f)})(t0)})},150);
+})();
+</script>
+</body></html>
